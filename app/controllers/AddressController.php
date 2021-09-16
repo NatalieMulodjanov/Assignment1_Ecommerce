@@ -5,7 +5,7 @@ namespace App\controllers;
 class addressController extends \app\core\Controller
 {
 
-    public function index($person_id)//the param is primary key in parent (person)
+    public function index()//the param is primary key in parent (person)
     { 
         $myAddress = new \app\models\Address();
         $results = $myAddress->getAll($person_id);
@@ -43,8 +43,7 @@ class addressController extends \app\core\Controller
         header('location:/Main/index');
     }
 
-    public function edit($animal_id)
-    { //edit a record for the record with known nanimal_id
+    public function edit($animal_id) { //edit a record for the record with known nanimal_id
         $animal = new \app\models\Animal;
         $animal = $animal->get($animal_id);
 
@@ -63,7 +62,7 @@ class addressController extends \app\core\Controller
     public function details($animal_id){
         $animal = new \app\models\Animal;
         $animal = $animal->get($animal_id);
-
         $this->view('Main/details', $animal);
     }
 }
+?>
