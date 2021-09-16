@@ -6,7 +6,7 @@ namespace app\core;
 
 class App
 {
-    private $controller = 'app\\controllers\\Main'; // set a default value for the controller
+    private $controller = 'app\\controllers\\AddressController'; // set a default value for the controller
     private $method = 'index';
     private $params = [];
 
@@ -43,7 +43,7 @@ class App
         //take care of any parameters
         $this->params = $url ? array_values($url) : [];
 
-        $obj = new \app\controllers\Main();
+        $obj = new \app\controllers\AddressController();
         call_user_func_array(array($this->controller, $this->method), $this->params);
     }
 
