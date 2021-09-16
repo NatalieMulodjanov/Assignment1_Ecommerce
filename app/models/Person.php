@@ -47,7 +47,7 @@ class Person extends \app\core\Model{
     }
 
     public function get($person_id){
-        $SQL = "SELECT * FROM person_information WHERE person_id=:person_id";
+        $SQL = 'SELECT * FROM person_information WHERE person_id=:person_id';
         $STMT = self::$__connection->prepare($SQL);
         $STMT->execute([':person_id' => $person_id]);
         $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Person');
@@ -63,7 +63,7 @@ class Person extends \app\core\Model{
     }
 
     public function getAll(){
-        $SQL="SELECT * FROM person_information";
+        $SQL='SELECT * FROM person_information';
         $STMT = self::$__connection->query($SQL);
         $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Person');
         return $STMT->fetchAll();
