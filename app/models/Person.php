@@ -39,7 +39,7 @@ class Person extends \app\core\Model {
     public function getAll() {
         $SQL = "SELECT * FROM person_information";
         $STMT = self::$_connection->query($SQL);
-        $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Person'
+        $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Person');
         return $STMT->fetchAll(); 
     }
     
@@ -58,7 +58,7 @@ class Person extends \app\core\Model {
         $STMT->execute(array(':f_name' => $this->f_name, ':l_name' => $this->l_name, ':notes' => $this->notes));
     }
     
-    public function update($person_id) {
+    public function update() {
         $SQL = "UPDATE person_information SET f_name = :f_name, l_name = :l_name, notes = :notes WHERE person_id = :person_id";
         $STMT = self::$_connection->prepare($SQL);
         $STMT->execute(array(':f_name' => $this->f_name, ':l_name' => $this->l_name, ':notes' => $this->notes, ':person_id' => $person_id));

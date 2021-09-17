@@ -66,7 +66,7 @@ class Address extends \app\core\Model {
         $SQL = 'SELECT * FROM address_information WHERE person_id = :person_id';
         $STMT = self::$_connection->prepare($SQL);
         $STMT->execute(array(':person_id' => $person_id));
-        $STMT->setFetchMode(\PDO::FETCH_CLASS, '\app\models\Address');
+        $STMT->setFetchMode(\PDO::FETCH_CLASS, '\\app\\models\\Address');
         return $STMT->fetchAll();
     }
 
@@ -74,7 +74,7 @@ class Address extends \app\core\Model {
         $SQL = 'SELECT * FROM address_information WHERE address_id = :address_id';
         $STMT = self::$_connection->prepare($SQL);
         $STMT->execute(array(':address_id' => $address_id));
-        $STMT->setFetchMode(\PDO::FETCH_CLASS, '\app\models\Address');
+        $STMT->setFetchMode(\PDO::FETCH_CLASS, '\\app\\models\\Address');
         return $STMT->fetch();
     }  
 
