@@ -2,7 +2,7 @@
 namespace app\controllers;
 
 class personController extends \app\core\controller {
-    public function index($person_id) {
+    public function index() {
         $myPerson = new \app\models\Person();
         $results = $myPerson->getAll();
 
