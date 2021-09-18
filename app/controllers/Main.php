@@ -1,7 +1,7 @@
 <?php
 namespace app\controllers;
 
-class personController extends \app\core\controller {
+class Main extends \app\core\controller {
     public function index() {
         $myPerson = new \app\models\Person();
         $results = $myPerson->getAll();
