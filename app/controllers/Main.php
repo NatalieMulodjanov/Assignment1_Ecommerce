@@ -14,7 +14,7 @@ class Main extends \app\core\controller {
             $myPerson = new \app\models\Person();
             $myPerson->set_f_name = $_POST['f_name'];
             $myPerson->set_l_name = $_POST['l_name'];
-            $myPerson->set_notes = $_POST['set_notes'];
+            $myPerson->set_notes = $_POST['notes'];
             $myPerson->insert();
             header('Location: /person/index');
 
