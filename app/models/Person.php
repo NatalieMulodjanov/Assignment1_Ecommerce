@@ -53,9 +53,9 @@ class Person extends \app\core\Model {
     }
     
     public function insert(){
-        $SQL = "INSERT INTO person_information (f_name, l_name, notes) VALUES (:f_name, :l_name, :notes)";
+        $SQL = 'INSERT INTO person_information(f_name, l_name, notes) VALUES (:f_name, :l_name, :notes)';
         $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute(array(':f_name' => $this->f_name, ':l_name' => $this->l_name, ':notes' => $this->notes));
+        $STMT->execute(['f_name' => $this->f_name, 'l_name' => $this->l_name, 'notes' => $this->notes]);
     }
     
     public function update() {
