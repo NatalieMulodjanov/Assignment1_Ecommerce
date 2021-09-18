@@ -3,4 +3,5 @@
         // Import all classes with file extensiion .php
         include $class_name . '.php'; 
     }
+);
 ?>
