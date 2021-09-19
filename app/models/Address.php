@@ -85,9 +85,9 @@ class Address extends \app\core\Model {
     } 
 
     public function update() { // update an existing address
-        $SQL = 'UPDATE `address_information` SET `person_id` = :person_id, `description` = :description, `street` = :street, `city` = :city, `province_state` = :province_state, `postal_zip` = :postal_zip, `country_code` = :country_code WHERE address_id = :address_id';
+        $SQL = 'UPDATE `address_information` SET `person_id` = :person_id, `description` = :description, `street` = :street, `city` = :city, `province_state` = :province_state, `postal_zip_code` = :postal_zip_code, `country_code` = :country_code WHERE address_id = :address_id';
         $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute(array(':person_id' => $this->person_id, ':description' => $this->description, ':street' => $this->street, ':city' => $this->city, ':province_state' => $this->province_state, ':postal_zip' => $this->postal_zip, ':country_code' => $this->country_code, ':address_id' => $this->address_id));    
+        $STMT->execute(array(':person_id' => $this->person_id, ':description' => $this->description, ':street' => $this->street, ':city' => $this->city, ':province_state' => $this->province_state, 'postal_zip_code' => $this->postal_zip, ':country_code' => $this->country_code, ':address_id' => $this->address_id));    
     } 
 
     public function delete($address_id) { // delete an existing address

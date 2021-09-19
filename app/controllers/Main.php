@@ -12,9 +12,9 @@ class Main extends \app\core\controller {
     public function insert(){
         if (isset($_POST['submit'])) {
             $myPerson = new \app\models\Person();
-            $myPerson->set_f_name = $_POST['f_name'];
-            $myPerson->set_l_name = $_POST['l_name'];
-            $myPerson->set_notes = $_POST['notes'];
+            $myPerson->set_f_name( $_POST['f_name']);
+            $myPerson->set_l_name( $_POST['l_name']);
+            $myPerson->set_notes( $_POST['notes']);
             $myPerson->insert();
             header('Location: /person/index');
 
@@ -27,13 +27,13 @@ class Main extends \app\core\controller {
         $myPerson = new \app\models\Person();
         $myPerson = $myPerson->get($person_id);
         if (isset ($_POST['submit'])) {
-        $myPerson->set_f_name = $_POST['f_name'];
-        $myPerson->set_l_name = $_POST['l_name'];
-        $myPerson->set_notes = $_POST['set_notes'];
+        $myPerson->set_f_name($_POST['f_name']); 
+        $myPerson->set_l_name( $_POST['l_name']);
+        $myPerson->set_notes($_POST['set_notes']);
         $myPerson->update();
         header('Location: /person/index');
         }else {
-            $this->view('Person/updatePerson', $myPerson);
+            $this->view('Person/edit', $myPerson);
         }
     }
 
@@ -45,7 +45,9 @@ class Main extends \app\core\controller {
 
     public function details($person_id){
         $myPerson = new \app\models\Person();
+        $address = new \app\models\Address();
         $myPerson = $myPerson->get($person_id);
-        $this->view('Person/details', $myPerson);
+        $addressesOfPerson = $address->getAll($person_id);
+        $this->view('Person/details', [$myPerson,$addressesOfPerson]);
     }
 }

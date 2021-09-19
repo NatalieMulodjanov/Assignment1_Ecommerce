@@ -1,14 +1,14 @@
 <?php 
+namespace app\controllers;
 
-class AddressController extends app\core\Controller {
+class AddressController extends \app\core\controller {
     public function index($person_id) {
-        $myPerson = new \app\models\Person();
-        $myPerson = $myPerson->get($person_id);
+    
 
         $address = new \app\models\Address();
         $addresses = $address->getAll($person_id);
 
-        $this->view('Address/index', ['person'=>$myPerson, 'addresses'=>$addresses]);
+        $this->view('Address/index', $addresses);
     }
 
     public function insert($person_id) {
@@ -38,12 +38,12 @@ class AddressController extends app\core\Controller {
         $person = $person->get($address->person_id);
 
         if (isset ($_POST['submit'])) {
-            $address->description = $_POST['description'];
-            $address->street = $_POST['street'];
-            $address->city = $_POST['city'];
-            $address->province_state = $_POST['province-state'];
-            $address->postal_zip = $_POST['postal-zip'];
-            $address->country = $_POST['country'];
+            $address->setDescription($_POST['description']);
+            $address->setStreet($_POST['street']);
+            $address->setCity($_POST['city']);
+            $address->setProvinceState($_POST['province_state']); 
+            $address->setPostalZip($_POST['postal_zip']);
+            $address->setCountryCode($_POST['country_code']);
             $address->update();
 
             header("Location: /Address/index/$person->id");
@@ -52,10 +52,10 @@ class AddressController extends app\core\Controller {
         }
     }
 
-    public function details($address_id) {
-        $person = new \app\models\Person();
-        $person = $person->get($person_id);
-        $this->view('Address/details', $person);
+    public function details($person_id) {
+        $address = new \app\models\Address();
+        $addressArray = $address->getAll($person_id);
+        $this->view('Address/details', $addressArray);
     }
 
     public function delete($person_id) {

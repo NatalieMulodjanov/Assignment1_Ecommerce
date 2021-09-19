@@ -12,7 +12,6 @@
         public function __construct() {
             // Get url + parse to array
             $url = $this->parseUrl();
-
             // Check if controller exists
             if (isset($url[0])) {
                 if (file_exists('app/controllers/' . ($url[0]) . '.php')) {

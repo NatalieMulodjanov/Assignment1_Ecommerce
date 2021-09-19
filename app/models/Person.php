@@ -3,6 +3,7 @@
 namespace app\models;
 
 class Person extends \app\core\Model {
+    public $person_id;
     public $f_name;
     public $l_name;
     public $notes;
@@ -10,6 +11,10 @@ class Person extends \app\core\Model {
 
     public function __construct() {
         parent::__construct();
+    }
+
+    public function get_person_id(){
+        return $this->person_id;
     }
     
     public function get_f_name() {
@@ -61,7 +66,7 @@ class Person extends \app\core\Model {
     public function update() {
         $SQL = "UPDATE person_information SET f_name = :f_name, l_name = :l_name, notes = :notes WHERE person_id = :person_id";
         $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute(array(':f_name' => $this->f_name, ':l_name' => $this->l_name, ':notes' => $this->notes, ':person_id' => $person_id));
+        $STMT->execute(array(':f_name' => $this->f_name, ':l_name' => $this->l_name, ':notes' => $this->notes, ':person_id' => $this->person_id));
     } // $person_id is the primary key
     
     public function delete($person_id) {
