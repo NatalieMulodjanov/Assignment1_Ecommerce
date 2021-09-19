@@ -3,8 +3,9 @@ namespace app\controllers;
 
 class AddressController extends \app\core\controller {
     public function index($person_id) {
-    
-
+        $myPerson = new \app\models\Person();
+        $myPerson = $myPerson->get($person_id);
+        
         $address = new \app\models\Address();
         $addresses = $address->getAll($person_id);
 
