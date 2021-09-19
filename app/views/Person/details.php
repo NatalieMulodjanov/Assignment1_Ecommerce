@@ -41,10 +41,7 @@
 
 
     <a href='/Person/index'>Back to Person list</a><br/>
-    <a href='#'>Add Address</a><br/>
-    <a href='/AddressController/details/<?php echo $data->person_id ?>'>View Addresses</a>
-
-
+    <a href='/AddressController/insert/<?php echo $data[0]->person_id; ?>'>Add Address</a><br/>
 </body>
 
 </html>
