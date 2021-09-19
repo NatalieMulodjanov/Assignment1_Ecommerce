@@ -28,15 +28,16 @@
         <th>Province/State</th>
         <th>postal/zip code</th>
         <th>Country_code</th>
+        <th>Actions</th>
 
         <?php
         foreach ($data[1] as $addressRecord)
             echo "<tr> 
-                            <td>$addressRecord->street</td>
-                            <td>$addressRecord->city</td>
-                            <td>$addressRecord->province_state</td>
-                            <td>$addressRecord->postal_zip_code</td>
-                            <td>$addressRecord->country_code</td>
+                            <td>$addressRecord->street |</td>
+                            <td>$addressRecord->city |</td>
+                            <td>$addressRecord->province_state |</td>
+                            <td>$addressRecord->postal_zip_code |</td>
+                            <td>$addressRecord->country_code |</td>
                             <td><a href='/AddressController/details/$addressRecord->person_id'>Details</a></td>
                             <td><a href='/AddressController/delete/$addressRecord->person_id'>Delete</a></td>
                             <td><a href='/AddressController/edit/$addressRecord->address_id'>Edit</a></td>
