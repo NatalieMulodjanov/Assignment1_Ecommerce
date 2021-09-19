@@ -9,11 +9,16 @@
     <h4>First Name: </h4><input disabled type="text" value="<?php echo $data[0]->f_name; ?>"><br/>
     <h4>Last Name: </h4><input disabled type="text" value="<?php echo $data[0]->l_name; ?>"><br/>
     <h4>Notes: </h4><input disabled type="text" value="<?php echo $data[0]->notes; ?>"><br/>
-
+    
     <h1>Addresses:</h1>
-    <?php
+    <?php 
+        ob_start();
+        echo $data[0]->person_id;
+        $myPerson = ob_get_clean();
     if (empty($data[1])) {
-        echo "<h2>No addresses found</h2>";
+        echo "<h2>No addresses found</h2>
+                <a href='/AddressController/insert/$myPerson'>Add new Address</a>
+                <a href='/Person/index'>Back to Person list</a><br>";
         return;
     }
     ?>
