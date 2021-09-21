@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <title>Person Details</title>
 </head>
@@ -12,6 +11,7 @@
     
     <h1>Addresses:</h1>
     <?php 
+        // Loop through the addresses and display them, if any
         ob_start();
         echo $data[0]->person_id;
         $myPerson = ob_get_clean();
@@ -29,7 +29,6 @@
         <th>postal/zip code</th>
         <th>Country_code</th>
         <th>Actions</th>
-
         <?php
         foreach ($data[1] as $addressRecord)
             echo "<tr> 
@@ -44,12 +43,7 @@
                         </tr>"
         ?>
     </table>
-
-
     <a href='/Person/index'>Back to Person list</a><br/>
     <a href='/AddressController/insert/<?php echo $data[0]->person_id; ?>'>Add Address</a><br/>
 </body>
-
 </html>
-
-`
