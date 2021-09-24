@@ -74,5 +74,14 @@ class Person extends \app\core\Model {
         $STMT = self::$_connection->prepare($SQL);
         $STMT->execute(array(':person_id' => $person_id));
     }// $person_id is the primary key
+
+    public function search($search_term) {
+        $SQL = "SELECT * FROM person_information WHERE f_name LIKE :search_term OR l_name LIKE :search_term OR notes LIKE :search_term";
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute(array(':search_term' => '%' . $search_term . '%'));
+        $STMT->setFetchMode(\PDO::FETCH_CLASS,'app\\models\\Person');
+        return $STMT->fetchAll();
+    }
+
 }
 ?>

@@ -21,5 +21,11 @@
                 }
              ?>
         </table>
+
+        <form action="/Person/search" method="POST">
+                <input type="text" name="search">
+                <button type="submit">Search</button>
+        </form>
+
     </body>
 </html>

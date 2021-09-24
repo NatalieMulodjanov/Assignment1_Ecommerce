@@ -56,4 +56,10 @@ class Main extends \app\core\controller {
         $addressesOfPerson = $address->getAll($person_id);
         $this->view('Person/details', [$myPerson,$addressesOfPerson]);
     }
+
+    public function search(){
+        $myPerson = new \app\models\Person();
+        $results = $myPerson->search($_POST['search']);
+        $this->view('Person/search', $results);
+    }
 }
