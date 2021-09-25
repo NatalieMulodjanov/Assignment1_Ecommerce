@@ -1,6 +1,7 @@
 <?php 
 
 namespace app\models;
+
     /**
      *  Person model class, which contains actions for the address page,
      *  such as getters & setters as well as DB queries to create, delete and modify information
