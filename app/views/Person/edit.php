@@ -2,7 +2,6 @@
     <head>
         <title>Edit person</title>
     </head>
-
     <body>
         <h4>Edit person</h4>
         <form action="" method="post">

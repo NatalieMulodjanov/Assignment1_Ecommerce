@@ -2,13 +2,11 @@
 <head>
     <title>Person Details</title>
 </head>
-
 <body>
     <h4>Person ID: </h4><input disabled type="text" value="<?php echo $data[0]->person_id; ?>"><br/>
     <h4>First Name: </h4><input disabled type="text" value="<?php echo $data[0]->f_name; ?>"><br/>
     <h4>Last Name: </h4><input disabled type="text" value="<?php echo $data[0]->l_name; ?>"><br/>
     <h4>Notes: </h4><input disabled type="text" value="<?php echo $data[0]->notes; ?>"><br/>
-    
     <h1>Addresses:</h1>
     <?php 
         // Loop through the addresses and display them, if any
