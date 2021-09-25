@@ -3,7 +3,11 @@
         <title>Person Index</title>
     </head>
     <body>
-        <a href='/Person/insert'>Add Person</a>
+        <form action="/Person/search" method="POST">
+            <a href='/Person/insert'>Add Person</a>
+            <input type="text" name="search">
+            <button type="submit">Search</button>
+        </form>
         <table>
             <tr><th>First Name</th><th>Last Name</th><th>Notes</th><th>Actions</th></tr>
             <?php
@@ -21,11 +25,5 @@
                 }
              ?>
         </table>
-
-        <form action="/Person/search" method="POST">
-                <input type="text" name="search">
-                <button type="submit">Search</button>
-        </form>
-
     </body>
 </html>

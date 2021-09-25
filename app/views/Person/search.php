@@ -4,6 +4,7 @@
     </head>
     <body>
         <h1>Search results</h1>
+        <p>Search again below:</p>
         <form action="/Person/search" method="POST">
                 <input type="text" name="search">
                 <button type="submit">Search</button>
