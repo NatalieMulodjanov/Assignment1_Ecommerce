@@ -10,7 +10,6 @@
             Person Last Name: <input type='text' name='l_name' value='<?php echo $data->l_name; ?>'><br>
             Person Notes: <input type='text' name='notes' value='<?php echo $data->notes; ?>'><br> 
             <input type='submit' name="submit" value='Edit Person'>
-
         </form>
     </body>
 </html>
