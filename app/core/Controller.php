@@ -1,7 +1,5 @@
 <?php 
-
-namespace app\core; 
-
+namespace app\core;
     /**
      *  Controller class, which manages the views for the web application 
      *  Authors: Natalie Mulodjanov (1956449), Ron Friedman (1926133), Vanier College 2021

@@ -1,7 +1,5 @@
 <?php 
-
 namespace app\models;
-
     /**
      *  Address model class, which contains actions for the address page,
      *  such as getters & setters as well as DB queries to create, delete and modify information
@@ -9,7 +7,6 @@ namespace app\models;
      *  Date: 
      *  This code is/will be published on GitHub. The license is GPLv3. Please do not remove this comment
      */ 
-
 class Address extends \app\core\Model {
     public $description;
     public $street;
