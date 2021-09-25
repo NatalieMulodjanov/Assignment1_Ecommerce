@@ -1,7 +1,11 @@
 <?php 
-
     namespace app\core;
-
+    /**
+    *  Main App class, which contains actions for the entire project as it is responsible for initializing the entire app
+    *  Authors: Natalie Mulodjanov (1956449), Ron Friedman (1926133), Vanier College 2021
+    *  Date: 
+    *  This code is/will be published on GitHub. The license is GPLv3. Please do not remove this comment
+    */ 
     class App {
 
         private $controller = 'app\\controllers\\Main'; // Set default controller value

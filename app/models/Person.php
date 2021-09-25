@@ -1,13 +1,19 @@
 <?php 
 
 namespace app\models;
+    /**
+     *  Person model class, which contains actions for the address page,
+     *  such as getters & setters as well as DB queries to create, delete and modify information
+     *  Authors: Natalie Mulodjanov (1956449), Ron Friedman (1926133), Vanier College 2021
+     *  Date: 
+     *  This code is/will be published on GitHub. The license is GPLv3. Please do not remove this comment
+     */ 
 
 class Person extends \app\core\Model {
     public $person_id;
     public $f_name;
     public $l_name;
     public $notes;
-
 
     public function __construct() {
         parent::__construct();
@@ -41,6 +47,7 @@ class Person extends \app\core\Model {
         $this->notes = $notes;
     }
     
+    // get all data from table
     public function getAll() {
         $SQL = "SELECT * FROM person_information";
         $STMT = self::$_connection->query($SQL);
@@ -48,7 +55,7 @@ class Person extends \app\core\Model {
         return $STMT->fetchAll(); 
     }
     
-    // 
+    // get person information from person_id 
     public function get($person_id) {
         $SQL = "SELECT * FROM person_information WHERE person_id = :person_id";
         $STMT = self::$_connection->prepare($SQL);
@@ -82,6 +89,5 @@ class Person extends \app\core\Model {
         $STMT->setFetchMode(\PDO::FETCH_CLASS,'app\\models\\Person');
         return $STMT->fetchAll();
     }
-
 }
 ?>
