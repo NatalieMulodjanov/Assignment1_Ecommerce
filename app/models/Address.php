@@ -12,7 +12,7 @@ class Address extends \app\core\Model
     public $provice_state;
     public $country_code;
 
-    public function __construct($Person=new Person(), $description='', $street='', $city='', $province_state='', $country_code='' ){
+    public function __construct($person=new Person(), $description='', $street='', $city='', $province_state='', $country_code=''){
         parent::__construct();
     }
 
@@ -76,7 +76,7 @@ class Address extends \app\core\Model
     public function get($address_id) {
         $SQL = "SELECT * FROM address WHERE person_id = :person_id";
         $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute([':person_id' => $person_id)];
+        $STMT->execute([':person_id' => $person_id]);
         $STMT->setFetchMode(\PDO::FETCH_ASSOC, 'app\\models\\Person');
         return $STMT->fetch();
     }
