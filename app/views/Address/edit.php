@@ -10,7 +10,7 @@
             Street: <input type='text' name='street' value='<?php echo $data['address']->street; ?>'><br> 
             City: <input type='text' name='city' value='<?php echo $data['address']->city; ?>'><br>
             Province/State: <input type='text' name='province_state' value='<?php echo $data['address']->province_state; ?>'><br>
-            postal/Zip code: <input type='text' name='postal_zip' value='<?php echo $data['address']->postal_zip; ?>'><br>
+            postal/Zip code: <input type='text' name='postal_zip_code' value='<?php echo $data['address']->postal_zip_code; ?>'><br>
             Country code: 
             <select name='country_code'>
                 <option value="AF"> Afghanistan</option>

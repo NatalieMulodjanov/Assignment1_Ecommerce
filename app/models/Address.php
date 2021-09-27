@@ -12,7 +12,7 @@ class Address extends \app\core\Model {
     public $street;
     public $city;
     public $province_state;
-    public $postal_zip;
+    public $postal_zip_code;
     public $country_code;
 
     public function __construct() {
@@ -52,11 +52,11 @@ class Address extends \app\core\Model {
     }
 
     public function getPostalZip() {
-        return $this->postal_zip;
+        return $this->postal_zip_code;
     }
 
-    public function setPostalZip($postal_zip) {
-        $this->postal_zip = $postal_zip;
+    public function setPostalZip($postal_zip_code) {
+        $this->postal_zip_code = $postal_zip_code;
     }
 
     public function getCountryCode() {
@@ -84,15 +84,15 @@ class Address extends \app\core\Model {
     }  
 
     public function insert() { // insert a new address
-        $SQL = 'INSERT INTO address_information (person_id, description, street, city, province_state, postal_zip, country_code) VALUES (:person_id, :description, :street, :city, :province_state, :postal_zip, :country_code)';
+        $SQL = 'INSERT INTO address_information (person_id, description, street, city, province_state, postal_zip_code, country_code) VALUES (:person_id, :description, :street, :city, :province_state, :postal_zip_code, :country_code)';
         $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute(array(':person_id' => $this->person_id, ':description' => $this->description, ':street' => $this->street, ':city' => $this->city, ':province_state' => $this->province_state, ':postal_zip' => $this->postal_zip, ':country_code' => $this->country_code));
+        $STMT->execute(array(':person_id' => $this->person_id, ':description' => $this->description, ':street' => $this->street, ':city' => $this->city, ':province_state' => $this->province_state, ':postal_zip_code' => $this->postal_zip_code, ':country_code' => $this->country_code));
     } 
 
     public function update() { // update an existing address
         $SQL = 'UPDATE `address_information` SET `person_id` = :person_id, `description` = :description, `street` = :street, `city` = :city, `province_state` = :province_state, `postal_zip_code` = :postal_zip_code, `country_code` = :country_code WHERE address_id = :address_id';
         $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute(array(':person_id' => $this->person_id, ':description' => $this->description, ':street' => $this->street, ':city' => $this->city, ':province_state' => $this->province_state, 'postal_zip_code' => $this->postal_zip, ':country_code' => $this->country_code, ':address_id' => $this->address_id));    
+        $STMT->execute(array(':person_id' => $this->person_id, ':description' => $this->description, ':street' => $this->street, ':city' => $this->city, ':province_state' => $this->province_state, 'postal_zip_code' => $this->postal_zip_code, ':country_code' => $this->country_code, ':address_id' => $this->address_id));    
     } 
 
     public function delete($address_id) { // delete an existing address

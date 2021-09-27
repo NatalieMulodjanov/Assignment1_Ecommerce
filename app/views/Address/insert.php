@@ -4,13 +4,13 @@
     </head>
     <body>
         <form action='' method='post'>
-            Person ID: <input type='text' name='f_name' disabled value="<?php echo $data->person_id ?>"><br> <!-- Person ID get from link? FIXME: Does not work because apparently $data is a bool-->
+            Person ID: <input type='text' name='person_id' disabled value="<?php echo $data[1] ?>"><br> <!-- Person ID get from link? FIXME: Does not work because apparently $data is a bool-->
             Description: <input type='text' name='description'><br>
             Street: <input type='text' name='street'><br> 
             City: <input type='text' name='city'><br> 
             Province/State: <input type='text' name='province_state'><br> 
             Postal Code/Zip Code: <input type='text' name='postal_zip_code'><br> 
-            Country Code: 
+            Country Code:
             <select name='country_code'>
                 <option value="AF"> Afghanistan</option>
                 <option value="AL"> Albania</option>
@@ -258,7 +258,7 @@
                 <option value="ZM"> Zambia</option>
                 <option value="ZW"> Zimbabwe</option>
             </select><br>
-            <input type='submit' name="submit" value='Add Person'>
+            <input type='submit' name="submit" value='Add Address'>
         </form>
     </body>
 </html>

@@ -25,20 +25,21 @@ class AddressController extends \app\core\controller {
     public function insert($person_id) {
         if (isset ($_POST['submit'])) {
             $address = new \app\models\Address();
+            $address->person_id = $person_id;
             $address->description = $_POST['description'];
             $address->street = $_POST['street'];
             $address->city = $_POST['city'];
-            $address->province_state = $_POST['province-state'];
-            $address->postal_zip = $_POST['postal-zip'];
-            $address->country = $_POST['country'];
+            $address->province_state = $_POST['province_state'];
+            $address->postal_zip_code = $_POST['postal_zip_code'];
+            $address->country_code = $_POST['country_code'];
             $address->insert();
 
             // Redirect to the person's address page
-            header("Location: /Address/index/$person_id");
+            header("Location: /Person/details/$person_id");
         } else {
             $address = new \app\models\Address();
             $address = $address->get($person_id);
-            $this->view('Address/insert',$address);
+            $this->view('Address/insert',[$address, $person_id]);
         }
     }
 
@@ -59,7 +60,7 @@ class AddressController extends \app\core\controller {
             $address->setStreet($_POST['street']);
             $address->setCity($_POST['city']);
             $address->setProvinceState($_POST['province_state']); 
-            $address->setPostalZip($_POST['postal_zip']);
+            $address->setPostalZip($_POST['postal_zip_code']);
             $address->setCountryCode($_POST['country_code']);
             $address->update();
 
@@ -75,11 +76,14 @@ class AddressController extends \app\core\controller {
      * Show details of an address from form POST action by displaying the database record
      * @param int $person_id: the id of the person to which the address(es) belongs
      */
-    public function details($person_id) {
+    public function details($address_id) {
+       
         $address = new \app\models\Address();
-        $addressArray = $address->getAll($person_id); // Get all addresses for the person
-        $this->view('Address/details', $addressArray); // Display the details page
+        $address = $address->get($address_id);
+        $this->view('Address/details', $address); // Display the details page
     }
+    
+
 
     /**
      * Delete an address from form POST action by deleting the database record

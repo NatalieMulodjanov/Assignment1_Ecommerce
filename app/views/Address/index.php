@@ -21,7 +21,7 @@
                         <td>$address->street</td>
                         <td>$address->city</td>
                         <td>$address->province_state</td>
-                        <td>$address->postal_zip</td>
+                        <td>$address->postal_zip_code</td>
                         <td>$address->country_code</td>
                         <td>
                             <a href='/Address/details/$address->person_id'>details</a> |

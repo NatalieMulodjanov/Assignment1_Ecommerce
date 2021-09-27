@@ -35,7 +35,7 @@ class Main extends \app\core\controller {
         if (isset ($_POST['submit'])) {
         $myPerson->set_f_name($_POST['f_name']); 
         $myPerson->set_l_name( $_POST['l_name']);
-        $myPerson->set_notes($_POST['set_notes']);
+        $myPerson->set_notes($_POST['notes']);
         $myPerson->update();
         header('Location: /person/index');
         }else {
