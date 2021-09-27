@@ -15,8 +15,6 @@
                 <th>Country_code</th>
                 <?php 
                     //foreach ($data as $addressRecord) 
-                    
-                        
                         echo "<tr> 
                             <td>$data->address_id |</td>
                             <td>$data->person_id |</td>
@@ -29,10 +27,10 @@
                             <td><a href='/AddressController/delete/$data->person_id'>Delete</a></td>
                             <td><a href='/AddressController/edit/$data->address_id'>Edit</a></td>
                         </tr>";
-                    
-                    
                 ?>
             </table>
             <a href='/Person/details/<?php echo $data->person_id; ?>'>Back to list of addresses</a>
+            <a href='/Pictures/insert/<?php echo $data->person_id; ?>'>Add Picture</a>
+            <a href='/Pictures/details/<?php echo $data->person_id; ?>'>Display Pictures</a>
     </body>
 </html>
