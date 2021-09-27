@@ -89,9 +89,9 @@ class AddressController extends \app\core\controller {
      * Delete an address from form POST action by deleting the database record
      * @param int $person_id: the id of the person to which the address(es) belongs
      */
-    public function delete($person_id) {
-        $person = new \app\models\Person();
-        $person->delete($person_id); // Delete the address(es) for the person
+    public function delete($address_id) {
+        $address = new \app\models\Address();
+        $address->delete($address_id); // Delete the address(es) for the person
         header("Location: /Address/index"); // Redirect to the address page
     }
 }
