@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Search results</title>
+    </head>
+    <body>
+        <h1>Search results</h1>
+        <form action="/Person/search" method="POST">
+                <input type="text" name="search">
+                <button type="submit">Search</button>
+        </form>
+
+        <?php
+            foreach ($data as $person) {
+                echo "<a href='ass1/Person/details/$person->person_id'>$person->f_name $person->l_name<br>";
+            }   
+        ?>
+    </body>
+</html>
