@@ -82,8 +82,6 @@ class AddressController extends \app\core\controller {
         $this->view('Address/details', $address); // Display the details page
     }
     
-
-
     /**
      * Delete an address from form POST action by deleting the database record
      * @param int $person_id: the id of the person to which the address(es) belongs
