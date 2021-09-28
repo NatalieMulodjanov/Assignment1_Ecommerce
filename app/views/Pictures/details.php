@@ -3,10 +3,10 @@
         <title>Picture details</title>
     </head>
     <body>
-       <h1>Address details:</h1>
+       <h1>Picture details:</h1>
             <table>
-                <th>Address id</th>
-                <th>Person id</th>
+                <th>Picture_id</th>
+                <th>Person_id</th>
                 <th>Description</th>
                 <?php 
                  var_dump($data);
