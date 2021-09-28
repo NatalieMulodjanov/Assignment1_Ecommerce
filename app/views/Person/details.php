@@ -34,7 +34,7 @@
                             <td>$addressRecord->city |</td>
                             <td>$addressRecord->province_state |</td>
                             <td>$addressRecord->postal_zip_code |</td>
-                            <td>$addressRecord->country_code |</td>
+                            <td>$addressRecord->country_name |</td>
                             <td><a href='/AddressController/details/$addressRecord->address_id'>Details</a></td>
                             <td><a href='/AddressController/delete/$addressRecord->person_id'>Delete</a></td>
                             <td><a href='/AddressController/edit/$addressRecord->address_id'>Edit</a></td>

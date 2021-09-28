@@ -69,6 +69,8 @@ class Address extends \app\core\Model {
 
     public function getAll($person_id) { // get all addresses for a person
         $SQL = 'SELECT * FROM address_information WHERE person_id = :person_id';
+        $SQL = 'SELECT * FROM address_information,country WHERE address_information.country_code = country.country_code AND person_id = :person_id';
+        $SQL = 'SELECT * FROM address_information JOIN country ON address_information.country_code = country.country_code WHERE person_id = :person_id';
         $STMT = self::$_connection->prepare($SQL);
         $STMT->execute(array(':person_id' => $person_id));
         $STMT->setFetchMode(\PDO::FETCH_CLASS, '\\app\\models\\Address');

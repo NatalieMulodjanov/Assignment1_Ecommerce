@@ -15,7 +15,7 @@ class Pictures extends \app\core\controller {
         $picture = new \app\models\Pictures();
         $pictures = $picture->getAll($person_id);
 
-        $this->view('Pictures/index', $pictures);
+        $this->view('Pictures/index', ['pictures'=>$pictures]);
     }
 
     /**
@@ -30,7 +30,7 @@ class Pictures extends \app\core\controller {
             $picture->insert();
 
             // Redirect to the person's address page
-            header("Location: /Pictures/details/$person_id");
+            header("Location: /Pictures/index/$person_id");
         } else {
             $picture = new \app\models\Pictures();
             $picture = $picture->get($person_id);
@@ -55,7 +55,7 @@ class Pictures extends \app\core\controller {
             $picture->update();
 
             // Redirect to the person's address page
-            header("Location: /Pictures/index/$person->id");
+            header("Location: /Pictures/index/$person->person_id");
         } else {
             // Display the edit form
             $this->view('Pictures/edit', ['picture'=>$picture, 'person'=>$person]);
@@ -67,10 +67,11 @@ class Pictures extends \app\core\controller {
      * @param int $person_id: the id of the person to which the address(es) belongs
      */
     public function details($person_id) {
-       
-        $person = new \app\models\Person();
-        $person = $person->get($person_id);
-        $this->view('Pictures/details', $person); // Display the details page
+        
+        $picture = new \app\models\Pictures();
+        $picture = $picture->get($person_id);
+
+        $this->view('Pictures/index/', ['picture'=>$picture]); // Display the details page
     }
     
     /**
@@ -79,8 +80,9 @@ class Pictures extends \app\core\controller {
      */
     public function delete($picture_id) {
         $picture = new \app\models\Pictures();
+        $picture = $picture->get($picture_id);
         $picture->delete($picture_id); // Delete the address(es) for the person
-        header("Location: /Pictures/index"); // Redirect to the address page
+        header("Location: /Pictures/index/$picture->person_id"); // Redirect to the address page
     }
 }
 ?>

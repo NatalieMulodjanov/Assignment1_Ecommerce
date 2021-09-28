@@ -31,6 +31,6 @@
             </table>
             <a href='/Person/details/<?php echo $data->person_id; ?>'>Back to list of addresses</a>
             <a href='/Pictures/insert/<?php echo $data->person_id; ?>'>Add Picture</a>
-            <a href='/Pictures/details/<?php echo $data->person_id; ?>'>Display Pictures</a>
+            <a href='/Pictures/index/<?php echo $data->person_id; ?>'>Display Pictures</a>
     </body>
 </html>

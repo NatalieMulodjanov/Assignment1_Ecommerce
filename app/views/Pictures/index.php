@@ -16,9 +16,9 @@
                         <td>$picture->picture_id</td>
                         <td>$picture->description</td>
                         <td>
-                            <a href='/Pictures/details/$picture->person_id'>details</a> |
-                            <a href='/Pictures/update/$picture->person_id'>edit</a> |
-                            <a href='/Pictures/delete/$picture->person_id'>delete</a> |
+                            <a href='/Pictures/index/$picture->person_id'>details</a> |
+                            <a href='/Pictures/edit/$picture->picture_id'>edit</a> |
+                            <a href='/Pictures/delete/$picture->picture_id'>delete</a> |
                         </td>
                     </tr>";
                 }
