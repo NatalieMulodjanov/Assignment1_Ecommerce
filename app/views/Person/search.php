@@ -12,7 +12,7 @@
 
         <?php
             foreach ($data as $person) {
-                echo "<a href='ass1/Person/details/$person->person_id'>$person->f_name $person->l_name<br>";
+                echo "<a href='/Person/details/$person->person_id'>$person->f_name $person->l_name<br>";
             }   
         ?>
     </body>

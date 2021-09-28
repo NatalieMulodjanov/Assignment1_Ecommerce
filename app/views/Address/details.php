@@ -29,8 +29,8 @@
                         </tr>";
                 ?>
             </table>
-            <a href='ass1/Person/details/<?php echo $data->person_id; ?>'>Back to list of addresses</a>
-            <a href='ass1/Pictures/insert/<?php echo $data->person_id; ?>'>Add Picture</a>
-            <a href='ass1/Pictures/details/<?php echo $data->person_id; ?>'>Display Pictures</a>
+            <a href='/Person/details/<?php echo $data->person_id; ?>'>Back to list of addresses</a>
+            <a href='/Pictures/insert/<?php echo $data->person_id; ?>'>Add Picture</a>
+            <a href='/Pictures/details/<?php echo $data->person_id; ?>'>Display Pictures</a>
     </body>
 </html>

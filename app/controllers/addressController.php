@@ -65,7 +65,7 @@ class AddressController extends \app\core\controller {
             $address->update();
 
             // Redirect to the person's address page
-            header("Location: ass1/Address/index/$person->id");
+            header("Location: /Address/index/$person->id");
         } else {
             // Display the edit form
             $this->view('Address/edit', ['address'=>$address, 'person'=>$person]);
@@ -91,7 +91,7 @@ class AddressController extends \app\core\controller {
     public function delete($address_id) {
         $address = new \app\models\Address();
         $address->delete($address_id); // Delete the address(es) for the person
-        header("Location: ass1/Address/index"); // Redirect to the address page
+        header("Location: /Address/index"); // Redirect to the address page
     }
 }
 ?>

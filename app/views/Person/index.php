@@ -4,7 +4,7 @@
     </head>
     <body>
         <form action="/Person/search" method="POST">
-            <a href='ass1/Person/insert'>Add Person</a>
+            <a href='/Person/insert'>Add Person</a>
             <input type="text" name="search">
             <button type="submit">Search</button>
         </form>
@@ -17,9 +17,9 @@
                         <td>$person->l_name</td>
                         <td>$person->notes</td>
                         <td>
-                            <a href='ass1/Person/details/$person->person_id'>details</a> |
-                            <a href='ass1/Person/update/$person->person_id'>edit</a> |
-                            <a href='ass1/Person/delete/$person->person_id'>delete</a> |
+                            <a href='/Person/details/$person->person_id'>details</a> |
+                            <a href='/Person/update/$person->person_id'>edit</a> |
+                            <a href='/Person/delete/$person->person_id'>delete</a> |
                         </td>
                     </tr>";
                 }

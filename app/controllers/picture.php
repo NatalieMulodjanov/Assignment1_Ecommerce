@@ -45,7 +45,7 @@ class Picture extends \app\core\Controller
                     $picture->insert();
 
                     echo "$filename is saved";
-                    header('Location: ass1/picture/index');
+                    header('Location: /picture/index');
                 } else {
                     echo "Error saving file";
                 }

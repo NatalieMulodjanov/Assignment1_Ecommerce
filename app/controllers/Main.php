@@ -22,7 +22,7 @@ class Main extends \app\core\controller {
             $myPerson->set_l_name( $_POST['l_name']);
             $myPerson->set_notes( $_POST['notes']);
             $myPerson->insert();
-            header('Location: ass1/person/index');
+            header('Location: /person/index');
 
         }else {
             $this->view('Person/addPerson');
@@ -37,7 +37,7 @@ class Main extends \app\core\controller {
         $myPerson->set_l_name( $_POST['l_name']);
         $myPerson->set_notes($_POST['notes']);
         $myPerson->update();
-        header('Location: ass1/person/index');
+        header('Location: /person/index');
         }else {
             $this->view('Person/edit', $myPerson);
         }
@@ -46,7 +46,7 @@ class Main extends \app\core\controller {
     public function delete($person_id){
         $myPerson = new \app\models\Person();
         $myPerson->delete($person_id);
-        header('Location: ass1/person/index');
+        header('Location: /person/index');
     }
 
     public function details($person_id){
