@@ -4,7 +4,7 @@ namespace app\models;
      *  Person model class, which contains actions for the address page,
      *  such as getters & setters as well as DB queries to create, delete and modify information
      *  Authors: Natalie Mulodjanov (1956449), Ron Friedman (1926133), Vanier College 2021
-     *  Date: 
+     *  
      *  This code is/will be published on GitHub. The license is GPLv3. Please do not remove this comment
      */ 
 class Person extends \app\core\Model {

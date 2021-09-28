@@ -4,7 +4,7 @@ namespace app\models;
      *  Country model class, which contains actions for the address page,
      *  such as getters & setters as well as DB queries to create, delete and modify information
      *  Authors: Natalie Mulodjanov (1956449), Ron Friedman (1926133), Vanier College 2021
-     *  Date: 
+     *  
      *  This code is/will be published on GitHub. The license is GPLv3. Please do not remove this comment
      */ 
 class Country extends \app\core\Model{
@@ -14,22 +14,6 @@ class Country extends \app\core\Model{
     public function __construct($country_code='', $ocuntry_name=''){
         parent::__construct();
     }
-
-    // public function getCountryCode(){
-    //     return $this->country_code;
-    // }
-
-    // public function getCountryName(){
-    //     return $this->country_name;
-    // }
-
-    // public function setCountryCode($country_code){
-    //     $this->country_code = $country_code;
-    // }
-
-    // public function setCountryName($country_name){
-    //     $this->country_name = $country_name;
-    // }
 
     public function getAll(){
         $SQL = "SELECT * FROM country";
@@ -46,7 +30,6 @@ class Country extends \app\core\Model{
         return $STMT->fetch();
     }
 
-    //TODO: ask teacer if arguments needed
     public function insert(){
         $SQL = "INSERT INTO country (country_code, country_name) VALUES (:country_code, :country_name)";
         $STMT = self::$_connection->prepare($SQL);

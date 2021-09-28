@@ -9,8 +9,7 @@
                 <th>Person_id</th>
                 <th>Description</th>
                 <?php 
-                 var_dump($data);
-                    //foreach ($data as $addressRecord) 
+                 var_dump($data->person_id);
                         echo "<tr> 
                             <td>$data->picture_id |</td>
                             <td>$data->person_id |</td>

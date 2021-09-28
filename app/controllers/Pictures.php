@@ -4,7 +4,7 @@ namespace app\controllers;
 /**
  *  AddressController class, which contains actions for the address page
  *  Authors: Natalie Mulodjanov (1956449), Ron Friedman (1926133), Vanier College 2021
- *  Date: 
+ *  
  *  This code is/will be published on GitHub. The license is GPLv3. Please do not remove this comment
  */ 
 class Pictures extends \app\core\controller {
@@ -66,15 +66,13 @@ class Pictures extends \app\core\controller {
      * Show details of an address from form POST action by displaying the database record
      * @param int $person_id: the id of the person to which the address(es) belongs
      */
-    public function details($picture_id) {
+    public function details($person_id) {
        
-        $picture = new \app\models\Pictures();
-        $picture = $picture->get($picture_id);
-        $this->view('Pictures/details', $picture); // Display the details page
+        $person = new \app\models\Person();
+        $person = $person->get($person_id);
+        $this->view('Pictures/details', $person); // Display the details page
     }
     
-
-
     /**
      * Delete an address from form POST action by deleting the database record
      * @param int $person_id: the id of the person to which the address(es) belongs
