@@ -15,6 +15,22 @@ class Country extends \app\core\Model{
         parent::__construct();
     }
 
+    // public function getCountryCode(){
+    //     return $this->country_code;
+    // }
+
+    // public function getCountryName(){
+    //     return $this->country_name;
+    // }
+
+    // public function setCountryCode($country_code){
+    //     $this->country_code = $country_code;
+    // }
+
+    // public function setCountryName($country_name){
+    //     $this->country_name = $country_name;
+    // }
+
     public function getAll(){
         $SQL = "SELECT * FROM country";
         $STMT = self::$_connection->query($SQL);

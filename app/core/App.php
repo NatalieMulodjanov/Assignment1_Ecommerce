@@ -11,7 +11,6 @@
         private $controller = 'app\\controllers\\Main'; // Set default controller value
         private $method = 'index';
         private $params = [];
-        
         public function __construct() {
             // Get url + parse to array
             $url = $this->parseUrl();

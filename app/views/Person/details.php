@@ -15,8 +15,8 @@
         $myPerson = ob_get_clean();
     if (empty($data[1])) {
         echo "<h2>No addresses found</h2>
-                <a href='/AddressController/insert/$myPerson'>Add new Address</a>
-                <a href='/Person/index'>Back to Person list</a><br>";
+                <a href='ass1/AddressController/insert/$myPerson'>Add new Address</a>
+                <a href='ass1/Person/index'>Back to Person list</a><br>";
         return;
     }
     ?>
@@ -35,13 +35,13 @@
                             <td>$addressRecord->province_state |</td>
                             <td>$addressRecord->postal_zip_code |</td>
                             <td>$addressRecord->country_code |</td>
-                            <td><a href='/AddressController/details/$addressRecord->address_id'>Details</a></td>
-                            <td><a href='/AddressController/delete/$addressRecord->person_id'>Delete</a></td>
-                            <td><a href='/AddressController/edit/$addressRecord->address_id'>Edit</a></td>
+                            <td><a href='ass1/AddressController/details/$addressRecord->address_id'>Details</a></td>
+                            <td><a href='ass1/AddressController/delete/$addressRecord->person_id'>Delete</a></td>
+                            <td><a href='ass1/AddressController/edit/$addressRecord->address_id'>Edit</a></td>
                         </tr>"
         ?>
     </table>
-    <a href='/Person/index'>Back to Person list</a><br/>
-    <a href='/AddressController/insert/<?php echo $data[0]->person_id; ?>'>Add Address</a><br/>
+    <a href='ass1/Person/index'>Back to Person list</a><br/>
+    <a href='ass1/AddressController/insert/<?php echo $data[0]->person_id; ?>'>Add Address</a><br/>
 </body>
 </html>

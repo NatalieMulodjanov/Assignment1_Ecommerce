@@ -24,9 +24,9 @@
                         <td>$address->postal_zip_code</td>
                         <td>$address->country_code</td>
                         <td>
-                            <a href='/Address/details/$address->person_id'>details</a> |
-                            <a href='/Address/update/$address->person_id'>edit</a> |
-                            <a href='/Address/delete/$address->person_id'>delete</a> |
+                            <a href='ass1/Address/details/$address->address_id'>details</a> |
+                            <a href='ass1/Address/update/$address->address_id'>edit</a> |
+                            <a href='ass1/Address/delete/$address->address_id'>delete</a> |
                         </td>
                     </tr>";
                 }

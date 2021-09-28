@@ -2,7 +2,11 @@ Options -MultiViews
 
 RewriteEngine On 
 
+<<<<<<< HEAD
 RewriteBase / 
+=======
+RewriteBase /ass1 
+>>>>>>> master
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
